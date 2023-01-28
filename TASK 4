@@ -1,0 +1,23 @@
+import csv
+
+def add_student(name, grade, classroom):
+    # Open the students.csv file in append mode
+    with open("students.csv", "a") as file:
+        # Create a csv writer object
+        writer = csv.writer(file)
+        # Write the student information to the file
+        writer.writerow([name, grade, classroom])
+
+def view_students():
+    # Open the students.csv file in read mode
+    with open("students.csv", "r") as file:
+        # Create a csv reader object
+        reader = csv.reader(file)
+        # Print the students information
+        for row in reader:
+            print(row)
+
+# Test the functions
+add_student("John Smith", "10th", "A")
+add_student("Jane Doe", "11th", "B")
+view_students()
